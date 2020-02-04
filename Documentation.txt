@@ -1,0 +1,51 @@
+Class
+
+Animation
+===========
+Texture (eg: if you want animation of a player then give in texture of the sprite containing all corresponding images)
+switchtime(obvious)
+offset(if in the sprite there are x rows are y colums then feed in x,y)
+row (of the required sprite)
+totaltime( dont bother)
+soundloopconstant( constant that delays the sound that plays along with animation)
+
+Player
+==========
+move() - obs
+setdirection() - 1 for left 2 for right 3 for top 4 for bottom(down) and 5,6,7,8 for combination
+getdirection()-obs
+rotate()-obs
+settexture()-obs
+draw()- draws player on the map specified
+collisionenable()- sets 'collision' variable and iscollision boolean
+isunder()- if you want to draw something above the player, i.e things that are drawn after player is drawn
+collisionarray[index] - its like the index(ID) of the collision entity.
+directionarray[index]-  it is the direction(0,1,2,3,4,5,6,7,8) of the corresponding collision entity with same index.
+isacollision-obs
+collision- the direction of the player while it is undergoing a collision, the secon it stops colliding it becomes 0.
+under[] - number of rectangle shapes that can be drawn after the player is drawn.
+numberofunder- id of the under entity(just set a unique one for each in ASCENDING ORDER,like after 1 put 2 dont put 3).
+=============
+Collider (declare within while loop)
+======
+antiinertia- inertia maximum at 0 and minimum at 1.
+collisionno- the ID of the collision entity
+diaginertia- how much it should move while being pushed along diagonal
+=======================
+Map
+======
+fill()- fills with specified tile
+draw()- draws the map on the window
+settile()- sets tile of specific posn
+setrow()- sets row with given tile
+=======================
+Tile
+====
+Takes in Rect,texture,size(sidelength of square in pixels)
+setpos()- sets position if origin(midpoint of sqaure) 
+===========
+Dialogue
+=======
+Takes in 3 lines(strings) font of the text,texture of the dialogue box, uvrect of texture,time it displays for and window.
+
+Note: Each map has an ID, we can use setmap fxn of player and pt in map name, each map should have distinct ID in ascending order, and once setmap is done, in next iteration,ma; is drawn.
